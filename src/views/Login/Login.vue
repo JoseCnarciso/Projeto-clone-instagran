@@ -9,6 +9,8 @@
       <span v-if="errorInputPassword" class="error-box">{{ errorInputPassword }}</span>
       
       <button type="submit">Login</button>
+
+      <p><router-link to="/cadastro">Cadastre-se</router-link></p>
     </form>
   </template>
   
@@ -30,7 +32,8 @@
   
           if (!this.email) this.errorInputEmail = 'Email obrigatório';             
           if (!this.password) this.errorInputPassword = 'Password obrigatório';    
-          
+          // para utilizar o router dentro de um método 'redirecionar para a pagina que precisa'
+          this.$router.push('/Home')
           
         }
       }
